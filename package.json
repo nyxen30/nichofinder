@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "update": "node scripts/update.mjs"
+    "update": "node scripts/update.mjs",
+    "retag": "node scripts/retag.mjs"
   },
   "engines": { "node": ">=20" }
 }

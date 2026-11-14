@@ -2,8 +2,13 @@ name: Atualizar Niche Finder
 
 on:
   schedule:
-    - cron: '17 9 * * *'
-  workflow_dispatch:
+    - cron: '17 9 * * *'   # todo dia às 06:17 (horário de Brasília)
+  workflow_dispatch:        # botão "Run workflow" para rodar na hora
+    inputs:
+      so_reclassificar:
+        description: 'Só reclassificar os canais já salvos (não busca nada, não gasta cota)'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -21,7 +26,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: Reclassificar canais salvos (sem cota)
+        if: ${{ inputs.so_reclassificar }}
+        run: node scripts/retag.mjs
       - name: Buscar canais novos
+        if: ${{ !inputs.so_reclassificar }}
         env:
           YT_API_KEY: ${{ secrets.YT_API_KEY }}
           YT_API_KEYS: ${{ secrets.YT_API_KEYS }}

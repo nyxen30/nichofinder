@@ -9,6 +9,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { NICHES, MY_NICHE, LANGS } from '../config/niches.mjs';
+import { retagRecord } from './classify.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const STATE_FILE = path.join(ROOT, 'data/state.json');
@@ -171,15 +172,16 @@ try {
   }
 } catch (e) { if (!(e instanceof QuotaOut)) throw e; }
 
-// junta tags em canais já acompanhados; separa os realmente novos
+// junta as buscas em que o canal apareceu (rec.found); separa os realmente novos.
+// rec.tags e rec.mine NÃO vêm mais direto da busca: são decididos no fim,
+// conferindo os títulos do canal (scripts/classify.mjs).
 const addTags = (rec, tags) => {
-  rec.tags ??= [];
+  rec.found ??= [...(rec.tags || [])];
   for (const t of tags) {
     const key = `${t.niche}|${t.sub}`;
-    if (!rec.tags.includes(key)) rec.tags.push(key);
+    if (!rec.found.includes(key)) rec.found.push(key);
     rec.langs ??= [];
     if (!rec.langs.includes(t.lang)) rec.langs.push(t.lang);
-    if (t.mine) rec.mine = true;
   }
 };
 const fresh = [];
@@ -264,8 +266,10 @@ async function analyze(id) {
   rec.shortCount = short.length;
   rec.longViews = sum(long);
   rec.shortViews = sum(short);
-  rec.top = long.sort((a, b) => b.views - a.views).slice(0, 4)
+  long.sort((a, b) => b.views - a.views);
+  rec.top = long.slice(0, 4)
     .map(v => ({ id: v.id, t: v.title, v: v.views, s: v.secs, p: v.publishedAt }));
+  rec.titles = long.slice(0, 30).map(v => v.title); // para conferir o tema (fica só no state.json)
   rec.lastLongAt = long.reduce((m, v) => (!m || v.publishedAt > m ? v.publishedAt : m), null);
   rec.analyzedAt = new Date(now).toISOString();
   // histórico curto de views (para mostrar crescimento)
@@ -298,7 +302,12 @@ for (const [id, r] of Object.entries(state.tracked)) {
   }
 }
 
-// ---------------------------------------------------------------- 7. grava o que o site mostra
+// ---------------------------------------------------------------- 7. confere o tema de todos (sem cota)
+let mineCount = 0;
+for (const r of Object.values(state.tracked)) { retagRecord(r); if (r.mine) mineCount++; }
+console.log(`🏷️ Tema conferido: ${mineCount} canais confirmados no ${MY_NICHE.name}`);
+
+// ---------------------------------------------------------------- 8. grava o que o site mostra
 const visible = Object.values(state.tracked).filter(r => {
   if (!r.longCount || !r.top?.length) return false;
   const total = (r.longViews || 0) + (r.shortViews || 0);

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Niche Finder · canais novos que estão explodindo</title>
+<meta name="description" content="Canais de vídeo longo com até 3 semanas que já estão performando, em 5 idiomas, atualizado todo dia.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔎</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <h1>NICHE<span>FINDER</span></h1>
+      <p>Canais de vídeo longo que acabaram de nascer e já estão performando. Português, espanhol, inglês, alemão e francês. Atualiza sozinho todo dia.</p>
+    </div>
+    <div class="upd" id="upd">carregando…</div>
+  </header>
+
+  <nav class="tabs" id="tabs"></nav>
+  <div class="subs" id="subs"></div>
+
+  <section class="filters">
+    <div class="grp" id="langs"></div>
+    <label>Canal criado há no máx.
+      <select id="fAge"><option value="7">7 dias</option><option value="14">14 dias</option><option value="21" selected>21 dias</option><option value="30">30 dias</option><option value="45">45 dias</option></select>
+    </label>
+    <label>1º vídeo há no máx.
+      <select id="fFirst"><option value="7">7 dias</option><option value="14">14 dias</option><option value="21" selected>21 dias</option><option value="30">30 dias</option><option value="45">45 dias</option></select>
+    </label>
+    <label>Melhor vídeo com
+      <select id="fBest"><option value="5000">5 mil+</option><option value="10000" selected>10 mil+</option><option value="50000">50 mil+</option><option value="100000">100 mil+</option><option value="500000">500 mil+</option></select>
+    </label>
+    <label>Ordenar
+      <select id="fSort">
+        <option value="vpd">Views por dia</option>
+        <option value="best">Melhor vídeo</option>
+        <option value="views">Views totais</option>
+        <option value="subs">Inscritos</option>
+        <option value="growth">Crescimento 24h</option>
+        <option value="young">Mais novo</option>
+        <option value="disc">Descoberto agora</option>
+      </select>
+    </label>
+    <input id="fText" type="search" placeholder="Buscar canal ou título…">
+  </section>
+
+  <div class="summary" id="summary"></div>
+  <main id="out"></main>
+
+  <footer>
+    <p><b>Como funciona:</b> todo dia um robô busca na API do YouTube os vídeos longos (4 min ou mais) mais vistos e mais relevantes do último mês em cada subnicho e idioma. Os nichos de fora do seu entram em rodízio, alguns por dia. Depois ele checa a data de criação de cada canal e a data do primeiro vídeo, e descarta canais de Shorts (menos de 70% das views em vídeo longo).</p>
+    <p><b>Views/dia</b> = views dos vídeos longos ÷ dias desde o primeiro vídeo longo. <b>NOVO</b> = canal descoberto nas últimas 48 h.</p>
+  </footer>
+</div>
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>

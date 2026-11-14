@@ -1,0 +1,9 @@
+{
+  "name": "niche-finder",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "update": "node scripts/update.mjs"
+  },
+  "engines": { "node": ">=20" }
+}

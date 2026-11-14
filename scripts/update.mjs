@@ -66,7 +66,7 @@ async function yt(endpoint, params) {
     if (r.ok) return r.json();
     const body = await r.json().catch(() => ({}));
     const reason = body?.error?.errors?.[0]?.reason || '';
-    if (r.status === 403 && /quota|dailyLimit|rateLimit/i.test(reason)) {
+    if ((r.status === 403 || r.status === 429) && /quota|dailyLimit|rateLimit/i.test(reason)) {
       console.warn(`⚠️ chave ${keyIdx + 1} sem cota (${reason}), tentando a próxima`);
       used[keyIdx] = CFG.budgetPerKey; keyIdx++; continue;
     }

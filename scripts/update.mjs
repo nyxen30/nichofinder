@@ -29,7 +29,8 @@ const CFG = {
   maxUploadPages: 4,                                 // até 200 vídeos por canal
 };
 
-const KEYS = (env.YT_API_KEYS || env.YT_API_KEY || '').split(',').map(s => s.trim()).filter(Boolean);
+// aceita vírgula, espaço, ponto e vírgula ou quebra de linha entre as chaves, e ignora aspas
+const KEYS = (env.YT_API_KEYS || env.YT_API_KEY || '').split(/[\s,;]+/).map(s => s.replace(/["']/g, '').trim()).filter(Boolean);
 if (!KEYS.length) {
   console.error('❌ Falta a chave. Cadastre o secret YT_API_KEY no GitHub (Settings > Secrets and variables > Actions).');
   process.exit(1);
@@ -43,6 +44,7 @@ const chunk = (a, n) => Array.from({ length: Math.ceil(a.length / n) }, (_, i) =
 // ---------------------------------------------------------------- API + cota
 const COST = { search: 100, videos: 1, channels: 1, playlistItems: 1 };
 const used = KEYS.map(() => 0);
+const badKeys = [];
 let keyIdx = 0;
 class QuotaOut extends Error {}
 
@@ -69,10 +71,22 @@ async function yt(endpoint, params) {
       used[keyIdx] = CFG.budgetPerKey; keyIdx++; continue;
     }
     if (r.status === 404) return { items: [] };
-    if (r.status === 400 && /keyInvalid|badRequest/i.test(reason) && /key/i.test(body?.error?.message || '')) {
-      throw new Error('Chave da API inválida. Confira o secret YT_API_KEY.');
+    // problema na CHAVE (inválida, API não ativada, bloqueada): avisa e passa para a próxima
+    const msg = body?.error?.message || '';
+    if ((r.status === 400 && /key/i.test(msg)) || (r.status === 403 && /accessNotConfigured|forbidden|ipRefererBlocked|keyInvalid|API key|has not been used|disabled/i.test(reason + ' ' + msg))) {
+      const why = /accessNotConfigured|has not been used|disabled/i.test(reason + ' ' + msg)
+        ? 'a YouTube Data API v3 não está ativada no projeto dessa chave (Google Cloud > APIs e serviços > Biblioteca > Ativar)'
+        : /ipRefererBlocked|referer|blocked/i.test(reason + ' ' + msg)
+          ? 'a chave tem restrição de site/IP; em "Restrições de aplicativo" deixe "Nenhuma"'
+          : 'a chave é inválida (copiada pela metade ou com caractere a mais)';
+      console.log(`::warning::Chave ${keyIdx + 1} de ${KEYS.length} com problema: ${why}. [${r.status} ${reason}]`);
+      badKeys.push(keyIdx + 1);
+      used[keyIdx] = CFG.budgetPerKey; keyIdx++; continue;
     }
-    throw new Error(`${endpoint} ${r.status} ${reason} ${body?.error?.message || ''}`);
+    throw new Error(`${endpoint} ${r.status} ${reason} ${msg}`);
+  }
+  if (badKeys.length === KEYS.length) {
+    throw new Error(`Nenhuma chave funcionou (${KEYS.length} cadastrada${KEYS.length > 1 ? 's' : ''}). Veja os avisos acima e confira o secret.`);
   }
   throw new QuotaOut('cota do dia esgotada');
 }

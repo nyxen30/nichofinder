@@ -8,7 +8,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { MY_NICHE } from '../config/niches.mjs';
+import { MY_NICHE, NICHES, LANGS } from '../config/niches.mjs';
 import { retagRecord } from './classify.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -34,6 +34,13 @@ for (const c of site?.channels || []) {
   if (r) { c.tags = [...r.tags]; c.mine = r.mine; }
   else { retagRecord(c); delete c.found; }
 }
+
+// lista de nichos/subnichos que o site mostra (para subnichos novos aparecerem já)
+if (site) site.taxonomy = {
+  langs: LANGS,
+  mine: { id: MY_NICHE.id, name: MY_NICHE.name, emoji: MY_NICHE.emoji, subs: MY_NICHE.subs.map(s => ({ id: s.id, name: s.name })) },
+  niches: NICHES.map(n => ({ id: n.id, name: n.name, emoji: n.emoji, subs: n.subs.map(s => ({ id: s.id, name: s.name })) })),
+};
 
 // relatório
 const now = new Map();

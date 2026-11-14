@@ -135,9 +135,63 @@ export const MY_NICHE = {
       pt: 'e se você encontrasse um tubarão', en: 'what if you met a shark', es: 'qué pasaría si te encontraras un tiburón',
       de: 'was wäre wenn du einem Hai begegnest', fr: 'et si vous croisiez un requin' },
       kw: {
-        pt: ['e se', 'encontr*', 'você'], en: ['what if', 'met', 'meet', 'encounter*', 'you'],
-        es: ['qué pasaría', 'y si', 'encontr*'], de: ['was wäre wenn', 'begegn*', 'triffst'],
-        fr: ['et si', 'croisi*', 'rencontr*'],
+        pt: ['e se', 'encontrasse', 'encontrar um'], en: ['what if', 'met a', 'encounter*'],
+        es: ['qué pasaría', 'y si', 'encontraras'], de: ['was wäre wenn', 'begegn*'],
+        fr: ['et si', 'croisiez', 'rencontriez'],
+      } },
+    { id: 'tubaroes', name: 'Tubarões', q: {
+      pt: 'tubarões mais perigosos', en: 'most dangerous sharks', es: 'tiburones más peligrosos',
+      de: 'gefährlichste Haie', fr: 'requins les plus dangereux' },
+      kw: {
+        pt: ['tubar*', 'megalodon*'], en: ['shark*', 'megalodon*'], es: ['tiburón', 'tiburones', 'megalodón', 'megalodon*'],
+        de: ['hai', 'haie', 'haien', 'haifisch*', 'weißhai*', 'tigerhai*', 'hammerhai*', 'bullenhai*', 'walhai*', 'megalodon*'],
+        fr: ['requin*', 'mégalodon', 'megalodon*'],
+      } },
+    { id: 'cobras-repteis', name: 'Cobras e répteis', q: {
+      pt: 'cobras mais venenosas', en: 'most venomous snakes', es: 'serpientes más venenosas',
+      de: 'giftigste Schlangen', fr: 'serpents les plus venimeux' },
+      kw: {
+        pt: ['cobra*', 'serpente*', 'sucuri*', 'jiboia*', 'víbora*', 'réptil', 'répteis', 'lagarto*', 'komodo'],
+        en: ['snake*', 'serpent*', 'python*', 'anaconda*', 'cobra*', 'viper*', 'mamba*', 'reptile*', 'lizard*', 'komodo'],
+        es: ['serpiente*', 'culebra*', 'víbora*', 'anaconda*', 'pitón', 'cobra*', 'reptil', 'reptiles', 'lagarto*', 'komodo'],
+        de: ['schlange*', 'giftschlange*', 'python*', 'anakonda*', 'kobra*', 'viper*', 'reptil*', 'echse*', 'komodo*'],
+        fr: ['serpent*', 'python*', 'anaconda*', 'cobra*', 'vipère*', 'mamba*', 'reptile*', 'lézard*', 'komodo'],
+      } },
+    { id: 'crocodilos', name: 'Crocodilos e jacarés', q: {
+      pt: 'ataque de crocodilo', en: 'crocodile attack', es: 'ataque de cocodrilo',
+      de: 'Krokodil Angriff', fr: 'attaque de crocodile' },
+      kw: {
+        pt: ['crocodilo*', 'jacaré*', 'aligátor*'], en: ['crocodile*', 'croc', 'crocs', 'alligator*', 'caiman*'],
+        es: ['cocodrilo*', 'caimán', 'caimanes', 'aligátor*', 'yacaré*'], de: ['krokodil*', 'alligator*', 'kaiman*'],
+        fr: ['crocodile*', 'alligator*', 'caïman*'],
+      } },
+    { id: 'orcas-baleias', name: 'Orcas e baleias', q: {
+      pt: 'orcas e baleias', en: 'orcas and whales', es: 'orcas y ballenas',
+      de: 'Orcas und Wale', fr: 'orques et baleines' },
+      kw: {
+        pt: ['orca', 'orcas', 'baleia*', 'cachalote*'], en: ['orca*', 'killer whale*', 'whale*', 'sperm whale*'],
+        es: ['orca', 'orcas', 'ballena*', 'cachalote*'], de: ['orca*', 'schwertwal*', 'wal', 'wale', 'walen', 'pottwal*', 'blauwal*'],
+        fr: ['orque*', 'épaulard*', 'baleine*', 'cachalot*'],
+      } },
+    { id: 'insetos-aranhas', name: 'Insetos e aranhas perigosos', q: {
+      pt: 'insetos e aranhas mais perigosos', en: 'most dangerous insects and spiders', es: 'insectos y arañas más peligrosos',
+      de: 'gefährlichste Insekten und Spinnen', fr: 'insectes et araignées les plus dangereux' },
+      kw: {
+        pt: ['inseto*', 'aranha*', 'escorpi*', 'abelha*', 'vespa*', 'formiga*', 'mosquito*', 'centopeia*'],
+        en: ['insect*', 'spider*', 'scorpion*', 'bee', 'bees', 'hornet*', 'wasp*', 'ant', 'ants', 'mosquito*', 'centipede*'],
+        es: ['insecto*', 'araña*', 'escorpión', 'escorpiones', 'abeja*', 'avispa*', 'hormiga*', 'mosquito*', 'ciempiés'],
+        de: ['insekt*', 'spinne*', 'skorpion*', 'biene*', 'hornisse*', 'wespe*', 'ameise*', 'mücke*', 'tausendfüßer*'],
+        fr: ['insecte*', 'araignée*', 'scorpion*', 'abeille*', 'frelon*', 'guêpe*', 'fourmi*', 'moustique*', 'mille-pattes'],
+      } },
+    { id: 'criaturas-abismo', name: 'Criaturas do abismo', q: {
+      pt: 'monstros do fundo do mar', en: 'deep sea monsters', es: 'monstruos de las profundidades',
+      de: 'Monster der Tiefsee', fr: 'monstres des abysses' },
+      kw: {
+        pt: ['abismo*', 'abissa*', 'profundeza*', 'fundo do mar', 'fossa*', 'criatura*', 'lula gigante', 'monstro* marinho*'],
+        en: ['abyss*', 'deep sea', 'trench', 'creature*', 'giant squid', 'sea monster*', 'anglerfish'],
+        es: ['abismo*', 'abisal*', 'profundidades', 'fosa*', 'criatura*', 'calamar gigante', 'monstruo* marino*'],
+        de: ['tiefsee*', 'abgrund*', 'graben', 'kreatur*', 'riesenkalmar*', 'seemonster*', 'anglerfisch*'],
+        fr: ['abysse*', 'abyssa*', 'profondeurs', 'fosse*', 'créature*', 'calmar géant', 'monstre* marin*', 'baudroie*'],
       } },
   ],
 };
@@ -149,11 +203,11 @@ export const MY_NICHE = {
 export const NICHES = [
   { id: 'e-se', name: 'Curiosidades & "E se"', emoji: '🤔',
     kw: {
-      pt: ['e se', 'se você', 'superpoder*', 'poder de', 'viagem no tempo', 'voltasse no tempo', 'curiosidade*'],
-      en: ['what if', 'if you', 'superpower*', 'power to', 'time travel*', 'back in time'],
-      es: ['y si', 'qué pasaría', 'si tú', 'superpoder*', 'poder de', 'viaje en el tiempo', 'al pasado', 'curiosidad*'],
-      de: ['was wäre wenn', 'was passiert wenn', 'wenn du', 'superkraft*', 'superkräfte', 'zeitreise*', 'vergangenheit'],
-      fr: ['et si', 'si tu', 'si vous', 'super-pouvoir*', 'superpouvoir*', 'pouvoir de', 'voyage dans le temps', 'remontais le temps'],
+      pt: ['e se', 'se você', 'superpoder*', 'poder de', 'viagem no tempo', 'voltasse no tempo', 'curiosidade*', 'comparação', 'tamanho'],
+      en: ['what if', 'if you', 'superpower*', 'power to', 'time travel*', 'back in time', 'size comparison', 'comparison'],
+      es: ['y si', 'qué pasaría', 'si tú', 'superpoder*', 'poder de', 'viaje en el tiempo', 'al pasado', 'curiosidad*', 'comparación', 'tamaño'],
+      de: ['was wäre wenn', 'was passiert wenn', 'wenn du', 'superkraft*', 'superkräfte', 'zeitreise*', 'vergangenheit', 'größenvergleich', 'vergleich'],
+      fr: ['et si', 'si tu', 'si vous', 'super-pouvoir*', 'superpouvoir*', 'pouvoir de', 'voyage dans le temps', 'remontais le temps', 'comparaison'],
     },
     subs: [
     { id: 'hipoteses', name: 'E se você…', q: {
@@ -164,6 +218,11 @@ export const NICHES = [
     { id: 'viagem-tempo', name: 'Viagem no tempo', q: {
       pt: 'e se você voltasse no tempo', en: 'what if you went back in time', es: 'y si volvieras al pasado',
       de: 'was wäre wenn du in die Vergangenheit reist', fr: 'et si tu remontais le temps' } },
+    { id: 'e-se-terra', name: 'E se a Terra…', q: {
+      pt: 'e se a terra parasse de girar', en: 'what if the earth stopped spinning', es: 'qué pasaría si la tierra dejara de girar',
+      de: 'was wäre wenn die Erde aufhört sich zu drehen', fr: 'et si la terre arrêtait de tourner' } },
+    { id: 'comparacoes', name: 'Comparações de tamanho', q: {
+      pt: 'comparação de tamanho', en: 'size comparison', es: 'comparación de tamaño', de: 'Größenvergleich', fr: 'comparaison de taille' } },
   ]},
   { id: 'ciencia', name: 'Ciência & Espaço', emoji: '🔭',
     kw: {
@@ -186,13 +245,19 @@ export const NICHES = [
       de: 'was passiert mit deinem Körper', fr: 'ce qui arrive à ton corps' } },
     { id: 'fisica', name: 'Física e fenômenos', q: {
       pt: 'física explicada', en: 'physics explained', es: 'física explicada', de: 'Physik erklärt', fr: 'la physique expliquée' } },
+    { id: 'planeta-terra', name: 'Planeta Terra', q: {
+      pt: 'como a terra se formou', en: 'how earth formed', es: 'cómo se formó la tierra',
+      de: 'wie die Erde entstand', fr: "comment la terre s'est formée" } },
+    { id: 'misterios-ciencia', name: 'Mistérios da ciência', q: {
+      pt: 'mistérios da ciência', en: 'unexplained science mysteries', es: 'misterios de la ciencia',
+      de: 'ungelöste Rätsel der Wissenschaft', fr: 'mystères de la science' } },
   ]},
   { id: 'natureza', name: 'Natureza & Animais', emoji: '🦁',
     kw: {
       pt: ['natureza', 'vida selvagem', 'selvage*', 'animal', 'animais', 'bicho*', 'floresta*', 'selva*', 'dinossauro*',
-        'inseto*', 'pássaro*', 'ave', 'aves', 'leão', 'leões', 'tigre*', 'tubar*', 'cobra*', 'urso*', 'lobo*'],
+        'inseto*', 'pássaro*', 'ave', 'aves', 'leão', 'leões', 'tigre*', 'tubar*', 'cobra*', 'urso*', 'lobo*', 'raro', 'raros', 'rara', 'raras'],
       en: ['nature', 'wildlife', 'wild', 'animal*', 'forest*', 'jungle*', 'dinosaur*', 'insect*', 'bug', 'bugs', 'bird*',
-        'lion', 'lions', 'tiger*', 'shark*', 'snake*', 'bear', 'bears', 'wolf', 'wolves'],
+        'lion', 'lions', 'tiger*', 'shark*', 'snake*', 'bear', 'bears', 'wolf', 'wolves', 'rare', 'rarest'],
       es: ['naturaleza', 'vida salvaje', 'salvaje*', 'animal', 'animales', 'bosque*', 'selva*', 'dinosaurio*',
         'insecto*', 'bicho*', 'pájaro*', 'ave', 'aves', 'león', 'leones', 'tigre*', 'tiburón', 'tiburones', 'serpiente*', 'oso', 'osos', 'lobo*'],
       de: ['natur', 'wildnis', 'wild*', 'tier', 'tiere', 'tieren', 'tierdoku*', 'wald*', 'dschungel*', 'dinosaurier*',
@@ -207,6 +272,11 @@ export const NICHES = [
       pt: 'dinossauros documentário', en: 'dinosaurs documentary', es: 'dinosaurios documental', de: 'Dinosaurier Doku', fr: 'dinosaures documentaire' } },
     { id: 'insetos', name: 'Insetos e bichos estranhos', q: {
       pt: 'insetos mais estranhos', en: 'weirdest insects', es: 'insectos más extraños', de: 'seltsamste Insekten', fr: 'insectes les plus étranges' } },
+    { id: 'aves', name: 'Aves', q: {
+      pt: 'aves mais incríveis', en: 'most amazing birds', es: 'aves más increíbles', de: 'erstaunlichste Vögel', fr: 'oiseaux les plus incroyables' } },
+    { id: 'animais-raros', name: 'Animais raros', q: {
+      pt: 'animais mais raros do mundo', en: 'rarest animals in the world', es: 'animales más raros del mundo',
+      de: 'seltenste Tiere der Welt', fr: 'animaux les plus rares du monde' } },
   ]},
   { id: 'historia', name: 'História', emoji: '🏛️',
     kw: {
@@ -234,18 +304,21 @@ export const NICHES = [
     { id: 'misterios-historicos', name: 'Mistérios históricos', q: {
       pt: 'mistérios da história', en: 'history mysteries', es: 'misterios de la historia',
       de: 'Rätsel der Geschichte', fr: "mystères de l'histoire" } },
+    { id: 'civilizacoes-perdidas', name: 'Civilizações perdidas', q: {
+      pt: 'civilizações perdidas', en: 'lost civilizations', es: 'civilizaciones perdidas',
+      de: 'verlorene Zivilisationen', fr: 'civilisations perdues' } },
   ]},
   { id: 'misterio', name: 'Mistério & Terror', emoji: '🕯️',
     kw: {
-      pt: ['crime*', 'assassin*', 'serial', 'caso', 'casos', 'desaparec*', 'mistério*', 'misterios*', 'terror',
+      pt: ['paranormal', 'paranormais', 'crime*', 'assassin*', 'serial', 'caso', 'casos', 'desaparec*', 'mistério*', 'misterios*', 'terror',
         'horror', 'assustador*', 'medo', 'fantasma*', 'assombrad*', 'macabr*', 'regras', 'não resolvido*', 'polícia'],
-      en: ['crime*', 'criminal*', 'murder*', 'killer*', 'serial', 'case', 'cases', 'disappear*', 'missing', 'myster*',
+      en: ['paranormal', 'crime*', 'criminal*', 'murder*', 'killer*', 'serial', 'case', 'cases', 'disappear*', 'missing', 'myster*',
         'horror', 'scary', 'creepy', 'terrifying', 'ghost*', 'haunted', 'rules', 'analog', 'unsolved', 'police'],
-      es: ['crimen*', 'crímenes', 'asesin*', 'serial', 'caso', 'casos', 'desaparec*', 'misterio*', 'misterios*',
+      es: ['paranormal', 'paranormales', 'crimen*', 'crímenes', 'asesin*', 'serial', 'caso', 'casos', 'desaparec*', 'misterio*', 'misterios*',
         'terror', 'horror', 'miedo', 'escalofriante*', 'fantasma*', 'embrujad*', 'reglas', 'sin resolver', 'policía'],
-      de: ['verbrechen*', 'mord*', 'mörder*', 'serienmörder*', 'fall', 'fälle', 'verschwund*', 'vermisst*', 'mysteriös*',
+      de: ['paranormal*', 'verbrechen*', 'mord*', 'mörder*', 'serienmörder*', 'fall', 'fälle', 'verschwund*', 'vermisst*', 'mysteriös*',
         'rätsel*', 'horror*', 'gruselig*', 'grusel*', 'geist', 'geister*', 'spuk*', 'regeln', 'ungelöst*', 'polizei'],
-      fr: ['crime*', 'criminel*', 'meurtre*', 'tueur*', 'affaire*', 'disparu*', 'disparition*', 'mystère*', 'mystérieu*',
+      fr: ['paranormal*', 'crime*', 'criminel*', 'meurtre*', 'tueur*', 'affaire*', 'disparu*', 'disparition*', 'mystère*', 'mystérieu*',
         'horreur', 'effrayant*', 'flippant*', 'fantôme*', 'hanté*', 'règles', 'non résolu*', 'police'],
     },
     subs: [
@@ -258,14 +331,16 @@ export const NICHES = [
     { id: 'regras-sobrevivencia', name: 'Regras de terror / analog horror', q: {
       pt: 'regras para sobreviver terror', en: 'analog horror rules', es: 'reglas para sobrevivir terror',
       de: 'Regeln zum Überleben Horror', fr: 'règles pour survivre horreur' } },
+    { id: 'paranormal', name: 'Paranormal', q: {
+      pt: 'casos paranormais', en: 'paranormal cases', es: 'casos paranormales', de: 'paranormale Fälle', fr: 'cas paranormaux' } },
   ]},
   { id: 'animacao', name: 'Animação & Histórias', emoji: '🎞️',
     kw: {
-      pt: ['animad*', 'animação', 'desenho*', 'história', 'histórias', 'minha vida', 'dia 1', '100 dias', 'sobreviv*', 'zumbi*', 'apocalipse*'],
-      en: ['animated', 'animation*', 'cartoon*', 'story', 'stories', 'my life', 'day 1', '100 days', 'surviv*', 'zombie*', 'apocalyp*'],
-      es: ['animad*', 'animación', 'dibujo*', 'historia', 'historias', 'mi vida', 'día 1', '100 días', 'sobreviv*', 'zombi*', 'apocalipsis'],
-      de: ['animiert*', 'animation*', 'zeichentrick*', 'geschichte*', 'mein leben', 'tag 1', '100 tage', 'überleb*', 'zombie*', 'apokalyp*'],
-      fr: ['animé*', 'animation*', 'dessin animé', 'histoire*', 'ma vie', 'jour 1', '100 jours', 'surviv*', 'zombie*', 'apocalyps*'],
+      pt: ['animad*', 'animação', 'desenho*', 'história', 'histórias', 'minha vida', 'dia 1', '100 dias', 'sobreviv*', 'zumbi*', 'apocalipse*', 'stickman'],
+      en: ['animated', 'animation*', 'cartoon*', 'story', 'stories', 'my life', 'day 1', '100 days', 'surviv*', 'zombie*', 'apocalyp*', 'stickman'],
+      es: ['animad*', 'animación', 'dibujo*', 'historia', 'historias', 'mi vida', 'día 1', '100 días', 'sobreviv*', 'zombi*', 'apocalipsis', 'stickman'],
+      de: ['animiert*', 'animation*', 'zeichentrick*', 'geschichte*', 'mein leben', 'tag 1', '100 tage', 'überleb*', 'zombie*', 'apokalyp*', 'strichmännchen', 'stickman'],
+      fr: ['animé*', 'animation*', 'dessin animé', 'histoire*', 'ma vie', 'jour 1', '100 jours', 'surviv*', 'zombie*', 'apocalyps*', 'bonhomme*', 'stickman'],
     },
     subs: [
     { id: 'historias-animadas', name: 'Histórias animadas (drama)', q: {
@@ -275,6 +350,12 @@ export const NICHES = [
     { id: 'zumbi', name: 'Apocalipse zumbi', q: {
       pt: 'apocalipse zumbi história', en: 'zombie apocalypse story', es: 'apocalipsis zombi historia',
       de: 'Zombie Apokalypse Geschichte', fr: 'apocalypse zombie histoire' } },
+    { id: 'minha-historia', name: 'Minha história (animada)', q: {
+      pt: 'minha história animada', en: 'my story animated', es: 'mi historia animada',
+      de: 'meine Geschichte animiert', fr: 'mon histoire animée' } },
+    { id: 'stickman', name: 'Stickman', q: {
+      pt: 'animação stickman', en: 'stickman animation', es: 'animación stickman',
+      de: 'Strichmännchen Animation', fr: 'animation bonhomme bâton' } },
   ]},
   { id: 'financas', name: 'Finanças & Negócios', emoji: '💰',
     kw: {
@@ -296,14 +377,19 @@ export const NICHES = [
       pt: 'a história da empresa', en: 'the rise and fall of', es: 'el ascenso y caída de', de: 'Aufstieg und Fall von', fr: "l'ascension et la chute de" } },
     { id: 'renda-online', name: 'Renda online', q: {
       pt: 'ganhar dinheiro na internet', en: 'make money online', es: 'ganar dinero por internet', de: 'online Geld verdienen', fr: 'gagner de l argent en ligne' } },
+    { id: 'economia', name: 'Economia explicada', q: {
+      pt: 'economia explicada', en: 'economy explained', es: 'economía explicada', de: 'Wirtschaft erklärt', fr: 'économie expliquée' } },
+    { id: 'bilionarios', name: 'Bilionários', q: {
+      pt: 'como ele ficou bilionário', en: 'how he became a billionaire', es: 'cómo se hizo multimillonario',
+      de: 'wie er Milliardär wurde', fr: 'comment il est devenu milliardaire' } },
   ]},
   { id: 'tecnologia', name: 'Tecnologia & IA', emoji: '🤖',
     kw: {
-      pt: ['ia', 'inteligência artificial', 'chatgpt', 'robô*', 'tecnologia*', 'futuro', 'computador*', 'internet', 'celular*', 'digital*', 'hacker*'],
-      en: ['ai', 'artificial intelligence', 'chatgpt', 'gpt*', 'openai', 'robot*', 'tech', 'technolog*', 'future', 'computer*', 'internet', 'smartphone*', 'iphone*', 'digital', 'hacker*', 'cyber*'],
-      es: ['ia', 'inteligencia artificial', 'chatgpt', 'robot*', 'tecnología*', 'futuro', 'computador*', 'ordenador*', 'internet', 'celular*', 'digital*', 'hacker*'],
-      de: ['ki', 'künstliche intelligenz', 'chatgpt', 'roboter*', 'technik*', 'technologie*', 'zukunft', 'computer*', 'internet', 'handy*', 'smartphone*', 'digital*', 'hacker*'],
-      fr: ['ia', 'intelligence artificielle', 'chatgpt', 'robot*', 'technologie*', 'futur', 'avenir', 'ordinateur*', 'internet', 'smartphone*', 'numérique*', 'hacker*'],
+      pt: ['ia', 'inteligência artificial', 'chatgpt', 'robô*', 'tecnologia*', 'futuro', 'computador*', 'internet', 'celular*', 'digital*', 'hacker*', 'invenç*', 'inventor*'],
+      en: ['ai', 'artificial intelligence', 'chatgpt', 'gpt*', 'openai', 'robot*', 'tech', 'technolog*', 'future', 'computer*', 'internet', 'smartphone*', 'iphone*', 'digital', 'hacker*', 'cyber*', 'invention*', 'inventor*'],
+      es: ['ia', 'inteligencia artificial', 'chatgpt', 'robot*', 'tecnología*', 'futuro', 'computador*', 'ordenador*', 'internet', 'celular*', 'digital*', 'hacker*', 'invento*'],
+      de: ['ki', 'künstliche intelligenz', 'chatgpt', 'roboter*', 'technik*', 'technologie*', 'zukunft', 'computer*', 'internet', 'handy*', 'smartphone*', 'digital*', 'hacker*', 'erfindung*', 'erfinder*'],
+      fr: ['ia', 'intelligence artificielle', 'chatgpt', 'robot*', 'technologie*', 'futur', 'avenir', 'ordinateur*', 'internet', 'smartphone*', 'numérique*', 'hacker*', 'invention*', 'inventeur*'],
     },
     subs: [
     { id: 'ia', name: 'Inteligência artificial', q: {
@@ -311,6 +397,15 @@ export const NICHES = [
     { id: 'futuro', name: 'Futuro e tecnologia', q: {
       pt: 'como será o mundo em 2050', en: 'what the world will look like in 2050', es: 'cómo será el mundo en 2050',
       de: 'wie die Welt 2050 aussieht', fr: 'à quoi ressemblera le monde en 2050' } },
+    { id: 'invencoes', name: 'Invenções incríveis', q: {
+      pt: 'invenções incríveis', en: 'incredible inventions', es: 'inventos increíbles',
+      de: 'unglaubliche Erfindungen', fr: 'inventions incroyables' } },
+    { id: 'hackers', name: 'Hackers e internet', q: {
+      pt: 'hackers mais perigosos', en: 'most dangerous hackers', es: 'hackers más peligrosos',
+      de: 'gefährlichste Hacker', fr: 'hackers les plus dangereux' } },
+    { id: 'robos', name: 'Robôs', q: {
+      pt: 'robôs mais avançados', en: 'most advanced robots', es: 'robots más avanzados',
+      de: 'fortschrittlichste Roboter', fr: 'robots les plus avancés' } },
   ]},
   { id: 'geografia', name: 'Geografia & Países', emoji: '🗺️',
     kw: {
@@ -328,13 +423,19 @@ export const NICHES = [
     { id: 'lugares-extremos', name: 'Lugares extremos', q: {
       pt: 'lugares mais perigosos do mundo', en: 'most dangerous places on earth', es: 'lugares más peligrosos del mundo',
       de: 'gefährlichste Orte der Welt', fr: 'endroits les plus dangereux du monde' } },
+    { id: 'cidades', name: 'Cidades estranhas', q: {
+      pt: 'cidades mais estranhas do mundo', en: 'strangest cities in the world', es: 'ciudades más extrañas del mundo',
+      de: 'seltsamste Städte der Welt', fr: 'villes les plus étranges du monde' } },
+    { id: 'fronteiras', name: 'Fronteiras', q: {
+      pt: 'fronteiras mais estranhas', en: 'weirdest borders', es: 'fronteras más extrañas',
+      de: 'seltsamste Grenzen', fr: 'frontières les plus étranges' } },
   ]},
   { id: 'cultura-pop', name: 'Games & Cultura pop', emoji: '🎮',
     kw: {
       pt: ['jogo*', 'game*', 'minecraft', 'fortnite', 'roblox', 'gta', 'pokémon*', 'lore', 'filme*', 'série*', 'anime*',
-        'marvel', 'disney', 'vilão', 'vilões', 'personage*', 'explicad*', 'chances de sobreviver', 'batman', 'godzilla'],
+        'marvel', 'disney', 'vilão', 'vilões', 'personage*', 'explicad*', 'chances de sobreviver', 'batman', 'godzilla', 'teoria*'],
       en: ['game*', 'gaming', 'minecraft', 'fortnite', 'roblox', 'gta', 'pokemon*', 'lore', 'movie*', 'film*', 'series',
-        'anime*', 'marvel', 'disney', 'villain*', 'character*', 'explained', 'chances of surviving', 'batman', 'godzilla'],
+        'anime*', 'marvel', 'disney', 'villain*', 'character*', 'explained', 'chances of surviving', 'batman', 'godzilla', 'theory', 'theories'],
       es: ['juego*', 'videojuego*', 'minecraft', 'fortnite', 'roblox', 'gta', 'pokémon*', 'lore', 'película*', 'serie*',
         'anime*', 'marvel', 'disney', 'villano*', 'personaje*', 'explicad*', 'probabilidades de sobrevivir', 'batman', 'godzilla'],
       de: ['spiel*', 'game*', 'minecraft', 'fortnite', 'roblox', 'gta', 'pokémon*', 'lore', 'film*', 'serie*', 'anime*',
@@ -350,19 +451,23 @@ export const NICHES = [
     { id: 'vilões', name: 'Vilões e personagens', q: {
       pt: 'suas chances de sobreviver', en: 'your chances of surviving', es: 'tus probabilidades de sobrevivir',
       de: 'deine Überlebenschancen', fr: 'tes chances de survie' } },
+    { id: 'anime', name: 'Anime', q: {
+      pt: 'anime explicado', en: 'anime explained', es: 'anime explicado', de: 'Anime erklärt', fr: 'anime expliqué' } },
+    { id: 'teorias', name: 'Teorias de filmes e jogos', q: {
+      pt: 'teoria de filme', en: 'movie theory', es: 'teoría de película', de: 'Filmtheorie', fr: 'théorie film' } },
   ]},
   { id: 'mente', name: 'Psicologia & Autodesenvolvimento', emoji: '🧠',
     kw: {
       pt: ['psicolog*', 'mente', 'comportamento*', 'estoic*', 'filosofi*', 'filósofo*', 'sêneca', 'marco aurélio', 'saúde',
-        'doença*', 'hábito*', 'disciplina', 'motivaç*', 'ansiedade', 'depress*', 'narcis*', 'manipul*', 'autoestima', 'sono'],
+        'doença*', 'hábito*', 'disciplina', 'motivaç*', 'ansiedade', 'depress*', 'narcis*', 'manipul*', 'autoestima', 'sono', 'sonho*', 'dorme', 'linguagem corporal'],
       en: ['psycholog*', 'mind', 'behavior*', 'stoic*', 'philosoph*', 'seneca', 'marcus aurelius', 'health', 'disease*',
-        'habit*', 'discipline', 'motivation*', 'anxiety', 'depress*', 'narcis*', 'manipulat*', 'self', 'confidence', 'sleep'],
+        'habit*', 'discipline', 'motivation*', 'anxiety', 'depress*', 'narcis*', 'manipulat*', 'self', 'confidence', 'sleep', 'dream*', 'body language'],
       es: ['psicolog*', 'mente', 'comportamiento*', 'estoic*', 'filosofía*', 'filósofo*', 'séneca', 'marco aurelio', 'salud',
-        'enfermedad*', 'hábito*', 'disciplina', 'motivaci*', 'ansiedad', 'depresi*', 'narcis*', 'manipul*', 'autoestima', 'sueño'],
+        'enfermedad*', 'hábito*', 'disciplina', 'motivaci*', 'ansiedad', 'depresi*', 'narcis*', 'manipul*', 'autoestima', 'sueño*', 'lenguaje corporal', 'duermes'],
       de: ['psycholog*', 'psyche', 'verhalten*', 'stoizismus', 'stoiker*', 'philosoph*', 'seneca', 'mark aurel', 'gesundheit*',
-        'krankheit*', 'gewohnheit*', 'disziplin', 'motivation*', 'angst', 'depression*', 'narziss*', 'manipul*', 'selbstvertrauen', 'schlaf*'],
+        'krankheit*', 'gewohnheit*', 'disziplin', 'motivation*', 'angst', 'depression*', 'narziss*', 'manipul*', 'selbstvertrauen', 'schlaf*', 'schläfst', 'traum*', 'träume*', 'körpersprache'],
       fr: ['psycholog*', 'esprit', 'comportement*', 'stoïc*', 'stoïcisme', 'philosoph*', 'sénèque', 'marc aurèle', 'santé',
-        'maladie*', 'habitude*', 'discipline', 'motivation*', 'anxiété', 'dépression*', 'narciss*', 'manipul*', 'confiance', 'sommeil'],
+        'maladie*', 'habitude*', 'discipline', 'motivation*', 'anxiété', 'dépression*', 'narciss*', 'manipul*', 'confiance', 'sommeil', 'rêve*', 'dors', 'langage corporel'],
     },
     subs: [
     { id: 'psicologia', name: 'Psicologia', q: {
@@ -372,43 +477,74 @@ export const NICHES = [
     { id: 'saude', name: 'Saúde e doenças', q: {
       pt: 'doença mais rara do mundo', en: 'rarest disease in the world', es: 'enfermedad más rara del mundo',
       de: 'seltenste Krankheit der Welt', fr: 'maladie la plus rare du monde' } },
+    { id: 'linguagem-corporal', name: 'Linguagem corporal', q: {
+      pt: 'sinais de linguagem corporal', en: 'body language signs', es: 'señales de lenguaje corporal',
+      de: 'Körpersprache Zeichen', fr: 'signes du langage corporel' } },
+    { id: 'sono-sonhos', name: 'Sono e sonhos', q: {
+      pt: 'o que acontece quando você dorme', en: 'what happens when you sleep', es: 'qué pasa cuando duermes',
+      de: 'was passiert wenn du schläfst', fr: 'ce qui se passe quand tu dors' } },
   ]},
   { id: 'fe-mitos', name: 'Fé & Mitologia', emoji: '📜',
     kw: {
       pt: ['bíblia*', 'bíblic*', 'jesus', 'cristo', 'deus', 'deuses', 'profeta*', 'anjo*', 'demônio*', 'diabo', 'mitolog*',
-        'mito', 'mitos', 'zeus', 'thor', 'odin', 'olimpo', 'grega', 'gregos', 'nórdic*', 'apocalipse', 'gênesis', 'moisés', 'noé', 'fé'],
+        'mito', 'mitos', 'zeus', 'thor', 'odin', 'olimpo', 'grega', 'gregos', 'nórdic*', 'apocalipse', 'gênesis', 'moisés', 'noé', 'fé',
+        'egípci*', 'anúbis', 'osíris', 'lenda*', 'lendári*', 'dragão', 'dragões'],
       en: ['bible*', 'biblical', 'jesus', 'christ', 'god', 'gods', 'prophet*', 'angel*', 'demon*', 'devil', 'mytholog*',
-        'myth', 'myths', 'zeus', 'thor', 'odin', 'olympus', 'greek', 'norse', 'revelation', 'genesis', 'moses', 'noah', 'faith'],
+        'myth', 'myths', 'zeus', 'thor', 'odin', 'olympus', 'greek', 'norse', 'revelation', 'genesis', 'moses', 'noah', 'faith',
+        'egyptian', 'anubis', 'osiris', 'legend*', 'dragon*'],
       es: ['biblia*', 'bíblic*', 'jesús', 'cristo', 'dios', 'dioses', 'profeta*', 'ángel*', 'demonio*', 'diablo', 'mitolog*',
-        'mito', 'mitos', 'zeus', 'thor', 'odín', 'olimpo', 'griega', 'griegos', 'nórdic*', 'apocalipsis', 'génesis', 'moisés', 'noé', 'fe'],
+        'mito', 'mitos', 'zeus', 'thor', 'odín', 'olimpo', 'griega', 'griegos', 'nórdic*', 'apocalipsis', 'génesis', 'moisés', 'noé', 'fe',
+        'egipci*', 'anubis', 'osiris', 'leyenda*', 'legendari*', 'dragón', 'dragones'],
       de: ['bibel*', 'biblisch*', 'jesus', 'christus', 'gott', 'götter', 'prophet*', 'engel*', 'dämon*', 'teufel', 'mythologie*',
-        'mythos', 'mythen', 'zeus', 'thor', 'odin', 'olymp', 'griechisch*', 'nordisch*', 'offenbarung', 'genesis', 'mose', 'noah', 'glaube*'],
+        'mythos', 'mythen', 'zeus', 'thor', 'odin', 'olymp', 'griechisch*', 'nordisch*', 'offenbarung', 'genesis', 'mose', 'noah', 'glaube*',
+        'ägyptisch*', 'anubis', 'osiris', 'legende*', 'legendär*', 'drache*'],
       fr: ['bible*', 'biblique*', 'jésus', 'christ', 'dieu', 'dieux', 'prophète*', 'ange', 'anges', 'démon*', 'diable', 'mythologie*',
-        'mythe', 'mythes', 'zeus', 'thor', 'odin', 'olympe', 'grecque*', 'grecs', 'nordique*', 'apocalypse', 'genèse', 'moïse', 'noé', 'foi'],
+        'mythe', 'mythes', 'zeus', 'thor', 'odin', 'olympe', 'grecque*', 'grecs', 'nordique*', 'apocalypse', 'genèse', 'moïse', 'noé', 'foi',
+        'égyptien*', 'anubis', 'osiris', 'légende*', 'légendaire*', 'dragon*'],
     },
     subs: [
     { id: 'biblia', name: 'Histórias bíblicas', q: {
       pt: 'história bíblica', en: 'bible story', es: 'historia bíblica', de: 'biblische Geschichte', fr: 'histoire biblique' } },
     { id: 'mitologia', name: 'Mitologia', q: {
       pt: 'mitologia grega', en: 'greek mythology', es: 'mitología griega', de: 'griechische Mythologie', fr: 'mythologie grecque' } },
+    { id: 'nordica', name: 'Mitologia nórdica', q: {
+      pt: 'mitologia nórdica', en: 'norse mythology', es: 'mitología nórdica', de: 'nordische Mythologie', fr: 'mythologie nordique' } },
+    { id: 'egipcia', name: 'Mitologia egípcia', q: {
+      pt: 'mitologia egípcia', en: 'egyptian mythology', es: 'mitología egipcia', de: 'ägyptische Mythologie', fr: 'mythologie égyptienne' } },
+    { id: 'criaturas-lendarias', name: 'Criaturas lendárias', q: {
+      pt: 'criaturas lendárias', en: 'legendary creatures', es: 'criaturas legendarias', de: 'legendäre Kreaturen', fr: 'créatures légendaires' } },
   ]},
   { id: 'sobrevivencia', name: 'Sobrevivência & Desastres', emoji: '🧭',
     kw: {
       pt: ['desastre*', 'catástrofe*', 'tragédia*', 'acidente*', 'sobreviveu', 'sobrevivente*', 'naufrágio*', 'titanic',
-        'terremoto*', 'tsunami*', 'furacão', 'vulcão', 'avalanche*', 'incêndio*', 'explos*', 'chernobyl', 'preso*', 'resgate*'],
+        'terremoto*', 'tsunami*', 'furacão', 'vulcão', 'avalanche*', 'incêndio*', 'explos*', 'chernobyl', 'preso*', 'resgate*',
+        'avião', 'aviões', 'aére*', 'voo', 'perdido*', 'perdida*'],
       en: ['disaster*', 'catastroph*', 'tragedy', 'tragic', 'accident*', 'survived', 'survivor*', 'shipwreck*', 'titanic',
-        'earthquake*', 'tsunami*', 'hurricane*', 'volcano*', 'avalanche*', 'fire', 'explosion*', 'chernobyl', 'trapped', 'stranded', 'rescue*'],
+        'earthquake*', 'tsunami*', 'hurricane*', 'volcano*', 'avalanche*', 'fire', 'explosion*', 'chernobyl', 'trapped', 'stranded', 'rescue*',
+        'plane*', 'crash*', 'flight*', 'wilderness', 'lost'],
       es: ['desastre*', 'catástrofe*', 'tragedia*', 'accidente*', 'sobrevivió', 'sobreviviente*', 'superviviente*', 'naufragio*',
-        'titanic', 'terremoto*', 'tsunami*', 'huracán', 'volcán', 'avalancha*', 'incendio*', 'explosi*', 'chernóbil', 'chernobyl', 'atrapad*', 'rescate*'],
+        'titanic', 'terremoto*', 'tsunami*', 'huracán', 'volcán', 'avalancha*', 'incendio*', 'explosi*', 'chernóbil', 'chernobyl', 'atrapad*', 'rescate*',
+        'avión', 'aviones', 'aére*', 'vuelo*', 'perdido*', 'perdida*'],
       de: ['katastrophe*', 'tragödie*', 'unfall*', 'unglück*', 'überlebte', 'überlebende*', 'schiffbruch*', 'titanic',
-        'erdbeben*', 'tsunami*', 'hurrikan*', 'vulkan*', 'lawine*', 'feuer*', 'brand', 'explosion*', 'tschernobyl', 'gefangen*', 'rettung*'],
+        'erdbeben*', 'tsunami*', 'hurrikan*', 'vulkan*', 'lawine*', 'feuer*', 'brand', 'explosion*', 'tschernobyl', 'gefangen*', 'rettung*',
+        'flugzeug*', 'absturz*', 'flug', 'wildnis', 'verloren*', 'verschollen*'],
       fr: ['catastrophe*', 'désastre*', 'tragédie*', 'accident*', 'survécu', 'survivant*', 'naufrage*', 'titanic', 'séisme*',
-        'tremblement de terre', 'tsunami*', 'ouragan*', 'volcan*', 'avalanche*', 'incendie*', 'explosion*', 'tchernobyl', 'piégé*', 'sauvetage*'],
+        'tremblement de terre', 'tsunami*', 'ouragan*', 'volcan*', 'avalanche*', 'incendie*', 'explosion*', 'tchernobyl', 'piégé*', 'sauvetage*',
+        'avion*', 'aérien*', 'crash*', 'vol', 'perdu*'],
     },
     subs: [
     { id: 'desastres', name: 'Desastres reais', q: {
       pt: 'o pior desastre', en: 'worst disaster in history', es: 'el peor desastre', de: 'schlimmste Katastrophe', fr: 'la pire catastrophe' } },
     { id: 'sobreviventes', name: 'Histórias de sobreviventes', q: {
       pt: 'ele sobreviveu', en: 'how he survived', es: 'cómo sobrevivió', de: 'wie er überlebte', fr: 'comment il a survécu' } },
+    { id: 'naufragios', name: 'Naufrágios', q: {
+      pt: 'naufrágio história real', en: 'shipwreck true story', es: 'naufragio historia real',
+      de: 'Schiffbruch wahre Geschichte', fr: 'naufrage histoire vraie' } },
+    { id: 'acidentes-aereos', name: 'Acidentes aéreos', q: {
+      pt: 'acidente aéreo explicado', en: 'plane crash explained', es: 'accidente aéreo explicado',
+      de: 'Flugzeugabsturz erklärt', fr: 'crash aérien expliqué' } },
+    { id: 'perdidos-natureza', name: 'Perdidos na natureza', q: {
+      pt: 'perdido na selva sobreviveu', en: 'lost in the wilderness survival story', es: 'perdido en la selva sobrevivió',
+      de: 'in der Wildnis verloren überlebt', fr: 'perdu dans la nature survie' } },
   ]},
 ];

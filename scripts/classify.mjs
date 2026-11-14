@@ -78,9 +78,9 @@ export function classify(rawTitles, found) {
     const g = GROUP[gid];
     if (!themeMatches(titles, g.all).ok) continue;
     if (g.mine) mine = true;
-    // subnicho: fica nos que têm pelo menos um título com as palavras dele;
-    // se nenhum bater (ou não tiver palavras), mantém os subnichos da busca
-    const good = subs.filter(s => g.subs[s]?.length && titles.some(t => hit(t, g.subs[s])));
+    // subnicho: entra em todo subnicho do nicho que tenha pelo menos um título com as palavras dele
+    // (mesmo que a busca dele ainda não tenha rodado); se nenhum bater, mantém os subnichos da busca
+    const good = Object.keys(g.subs).filter(s => g.subs[s].length && titles.some(t => hit(t, g.subs[s])));
     for (const s of good.length ? good : subs) tags.push(`${gid}|${s}`);
   }
 

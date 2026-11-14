@@ -25,7 +25,7 @@
   const dfmt = iso => iso ? new Date(iso).toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', year: '2-digit' }) : '–';
   const dur = s => { const h = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60), x = s % 60; return (h ? h + ':' + String(m).padStart(2, '0') : m) + ':' + String(x).padStart(2, '0'); };
   const plural = (n, a, b) => `${n} ${n === 1 ? a : b}`;
-  const toast = msg => { const t = $('toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove('show'), 1800); };
+  const toast = window.NF_toast = msg => { const t = $('toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove('show'), 1800); };
   // avatar com a inicial do canal por baixo (aparece se a foto não carregar)
   const avatar = (c, cls = '') => `<span class="av ${cls}" aria-hidden="true">${esc([...(c.title || '?').trim()][0] || '?').toUpperCase()}${c.avatar
     ? `<img loading="lazy" src="${esc(c.avatar)}" alt="" referrerpolicy="no-referrer" onerror="this.remove()">` : ''}</span>`;
@@ -132,7 +132,7 @@
                          : [`${g.emoji} ${g.name}`, SUBNAME[S.sub] || S.sub, SUBNAME[S.sub] || S.sub])
       : [...(titles[S.view] || ['', '']), (titles[S.view] || ['', ''])[1]];
     $('crumb').textContent = crumb; $('title').textContent = title;
-    document.title = plain && plain !== 'Sem Superfície' ? `${plain} · Sem Superfície` : 'Sem Superfície · canais novos que estão crescendo';
+    if (!document.body.dataset.view || document.body.dataset.view === 'finder') document.title = plain && plain !== 'Sem Superfície' ? `${plain} · Sem Superfície` : 'Sem Superfície · canais novos que estão crescendo';
 
     // lista
     let list = base.filter(c => inView(c, S.view) && (S.sub === 'all' || c.tags.includes(S.sub)));
@@ -192,9 +192,10 @@
         <div class="kpi"><b>${c.growth > 0 ? `<span class="up">+${fmt(c.growth)}</span>` : '–'}</b><small>views em 24 h</small></div>
       </div>
       <p class="d-sec">Vídeos longos mais vistos</p>
-      <div class="vids">${c.top.map(v => `<a class="vid" href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener">
+      <div class="vids">${c.top.map(v => `<div class="vid-row"><a class="vid" href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener">
         <img loading="lazy" src="https://i.ytimg.com/vi/${v.id}/mqdefault.jpg" alt="" onerror="this.style.visibility='hidden'">
-        <span class="t">${esc(v.t)}</span><span class="m"><b>${fmt(v.v)}</b>${dur(v.s || 0)}</span></a>`).join('')}</div>
+        <span class="t">${esc(v.t)}</span><span class="m"><b>${fmt(v.v)}</b>${dur(v.s || 0)}</span></a>
+        <a class="btn sm ref" href="#roteiro?url=${encodeURIComponent('https://www.youtube.com/watch?v=' + v.id)}" data-close title="Abrir na aba Roteiro com este link">📝 Usar como referência</a></div>`).join('')}</div>
       ${spark(c.hist)}
       ${tags ? `<p class="d-sec">Nichos</p><div class="tags">${tags}</div>` : ''}
       <dl class="facts">
@@ -216,7 +217,7 @@
   }
 
   // ------------------------------------------------------------ menu do celular
-  const setMenu = on => {
+  const setMenu = window.NF_setMenu = on => {
     document.body.classList.toggle('menu-open', on);
     $('shade').hidden = !on;
     $('menuBtn').setAttribute('aria-expanded', on);
@@ -258,7 +259,7 @@
       navigator.clipboard?.writeText(c.top.map(v => v.t).join('\n')).then(() => toast('Títulos copiados'), () => toast('Não deu para copiar'));
       return;
     }
-    if ('close' in t.dataset) { $('detail').close(); return; }
+    if ('close' in t.dataset) { $('detail').close(); if (t.tagName !== 'A') return; }   // link "Usar como referência" fecha e segue
     if ('clear' in t.dataset) { clearFilters(); return; }
     if ('widen' in t.dataset) { S.age = '45'; S.first = '45'; render(); return; }
     if (t.dataset.open) openDetail(t.dataset.open);

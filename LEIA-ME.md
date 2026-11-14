@@ -47,6 +47,20 @@ Se ficar ❌ vermelho, clique na rodada, depois em **atualizar**, copie a mensag
 
 Daqui pra frente o robô roda **todo dia às 06:17** (horário de Brasília). Cada vez que ele atualiza os dados, a Vercel publica o site de novo sozinha.
 
+## Parte 5: ferramentas de IA (Roteiro, Thumbnail, Analisar vídeo)
+
+Essas ferramentas rodam nas funções da pasta `api/` (no servidor da Vercel). As chaves ficam só na Vercel.
+
+1. Pegue a chave do Gemini em **aistudio.google.com/apikey** → **Create API key**.
+2. Na Vercel, abra o projeto → **Settings** → **Environment Variables** e crie três variáveis (marque Production, Preview e Development):
+   - `GEMINI_API_KEY` = a chave do Gemini
+   - `YT_API_KEY` = uma chave da YouTube Data API (pode ser a mesma do robô)
+   - `SITE_PASSWORD` = uma senha que você inventar (é ela que o site pede)
+3. Vá em **Deployments**, clique nos **⋯** do último deploy → **Redeploy**. Variáveis novas só valem depois de um deploy novo.
+4. Abra o site, entre numa ferramenta e digite a senha. Ela fica guardada só no seu navegador.
+
+Opcional: `GEMINI_MODEL` (padrão `gemini-3.8-flash`) e `GEMINI_IMAGE_MODEL` (padrão `gemini-nano-banana-2.1`) trocam o modelo sem mexer no código, se o Google mudar os nomes.
+
 ---
 
 ## Perguntas comuns
